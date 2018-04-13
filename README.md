@@ -6,7 +6,7 @@ This also include form validation on each php pages
 
 Result can be seen while voting process is still going on 
 
-___________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________
 
 Tools and Language Used in this Project
 #Twilio Api
@@ -21,7 +21,7 @@ Tools and Language Used in this Project
 
 #javascript
 
-___________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________
 
 # Error which we encountered during Project
 1::Access forbidden!
@@ -31,5 +31,10 @@ You don't have permission to access the requested object. It is either read-prot
 If you think this is a server error, please contact the webmaster.
 
 Error 403
+
+2:: Session Variable not set and used
+
+3:: File not found or erased form the location
+
 
 ___________________________________________________________________________________________________________________________________
