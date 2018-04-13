@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
+
+<?php
+session_start();
+$nameErr="";
+$ageErr="";
+$phnoErr="";
+$counter=0;
+function validationfun(){
+	$name = $_POST["Name"];
+	if (!preg_match("/^[a-zA-Z ]*$/",$name))
+  		$GLOBALS['nameErr'] = "wrong name format";
+  	else
+  		$GLOBALS['counter']=$GLOBALS['counter']+1;
+}
+
+function validationage(){
+	$age = $_POST["ID"];
+	if (!preg_match("/^[a-zA-Z ]*$/",$name))
+  		$GLOBALS['nameErr'] = "wrong name format";
+  	else
+  		$GLOBALS['counter']=$GLOBALS['counter']+1;
+}
+
+function validationphno(){
+	$phno = $_POST["Area"];
+	if (!preg_match("/^[a-zA-Z ]*$/",$name))
+  		$GLOBALS['nameErr'] = "wrong name format";
+  	else
+  		$GLOBALS['counter']=$GLOBALS['counter']+1;
+}
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+	if(empty($_POST["Name"]))
+		$GLOBALS['nameErr'] = "Name Required";
+	else
+		validationfun();
+
+	if(empty($_POST["ID"]))
+		$GLOBALS['ageErr'] = "Age Required";
+	else
+		validationage();
+
+	if(empty($_POST["Area"]))
+		$GLOBALS['phnoErr'] = "Phone Number Required ";
+	else
+		validationphno();
+?>
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+          <!-- LOGIN MODULE -->
+        <div class="login">
+            <div class="wrap">
+                <!-- TOGGLE -->
+                <div id="toggle-wrap">
+                    <div id="toggle-terms">
+                        <div id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- SLIDER -->
+                <div class="content">
+                    <!-- LOGO -->
+                   
+                    <!-- SLIDESHOW -->
+                    <div id="slideshow">
+                        
+                        <div class="two">
+                             <h2><span>PARTIES</span></h2>
+                            <p>CONGRESS<br>
+                                BJP<br>
+                                AAP<br></p>
+                        </div>
+                        <div class="three">
+                            <h2><span>INFORMATION</span></h2>
+                            <p>Call 1800-180-180 to know about location centres</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- LOGIN FORM -->
+                <div class="user">
+
+                    <div class="form-wrap">
+                        <!-- TABS -->
+                    	<div class="tabs">
+                            
+                    		<h3 class="signup-tab"><a class="sign-up" href="#signup-tab-content"><span>Sign Up</span></a></h3>
+                    	</div>
+                        <!-- TABS <CONTENT></CONTENT>T -->
+                    	<div class="tabs-content">
+                            <!-- TABS CONTENT LOGIN -->
+                    		<div id="login-tab-content" class="active">
+
+<form action="insert.php" method="post">
+
+<input type="text" class="input" name="Name" placeholder="Name"><span class="error"> <?php echo $nameErr?></span>
+<input type="text" class="input" name="Number" placeholder="Phone"><span class="error"> <?php echo $ageErr?></span>
+<input type="name" class="input" name="Party" placeholder="Party">
+<input type="name" class="input" name="Area" placeholder="Area"><span class="error"> <?php echo $phnoErr;?></span>
+<input type="Submit"  value="Submit"><br>
+</form>
+                    		</div>
+                    	</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script  src="js/index.js"></script>
+</body>
+</html>
+
+
